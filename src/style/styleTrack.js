@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 // App.js
 export const MainDiv = styled.div`
   width: 100%;
@@ -9,7 +10,7 @@ export const MainDiv = styled.div`
 export const ContainerDiv = styled.div`
   /* max-width: 1920px; */
   width: 2100px;
-  height: 100vh;
+  height: 65vh;
   margin: 0 auto;
   position: relative;
   background-color: #181818;
@@ -45,30 +46,91 @@ export const BarDiv = styled.div`
   background: rgba(28, 28, 28, 0.5);
 `;
 export const BarContentDiv = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
 `;
 export const BarPlayerProgressDiv = styled.div`
-  width: 100%;
+  width: 90%;
   height: 5px;
   background: #2e2e2e;
 `;
+export const TimeLIneInput = styled.input`
+  width: 100%;
+  background-color: #580EA2;
+  & {
+  -webkit-appearance: none;
+  margin-right: 15px;
+  height: 7px;
+    background:  #580EA2;;
+  border-radius: 5px;
+  background-size:  100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* Input Thumb */
+&::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 40px;
+  border-radius: 10%;
+  background: grey; 
+}
+
+&::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: gray; 
+}
+
+&::-ms-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: gray; 
+}
+
+&::-webkit-slider-thumb:hover {
+  background: gray;
+}
+
+&::-moz-range-thumb:hover {
+  background: #ff0200;
+}
+
+&::-ms-thumb:hover {
+  background: #ff0200;
+}
+
+/* Input Track */
+&::-webkit-slider-runnable-track  {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+&::-moz-range-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+&::-ms-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+`;
 export const BarPlayerBlockDiv = styled.div`
   height: 73px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 `;
 export const BarPlayerDiv = styled.div`
@@ -81,7 +143,6 @@ export const BarPlayerDiv = styled.div`
 export const PlayerControls = styled.div`
   display: flex;
   flex-direction: row;
-  /* padding: 0 27px 0 31px; */
   padding-left: 50px;
   padding-right: 32px;
   gap: 32px;
@@ -139,6 +200,10 @@ export const PlayerBtnShuffleImage = styled.img`
   fill: transparent;
   stroke: #696969;
 `;
+export const PauseButton = styled.button`
+  background-color: rgba(28, 28, 28, 0.5);
+`;
+
 // Bar_Volume
 export const BarVolumeBlockDiv = styled.div`
   width: auto;
@@ -342,8 +407,9 @@ export const TrackTitleLinkA = styled.a`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: #ffffff;    
 `;
+
 export const TrackAuthorLinkA = styled.a`
   font-style: normal;
   font-weight: 400;
@@ -383,15 +449,8 @@ export const CenterBlockSearch = styled.div`
   width: 100%;
   border-bottom: 1px solid #4e4e4e;
   margin-bottom: 51px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 `;
 export const SearchSvg = styled.svg`
@@ -402,8 +461,6 @@ export const SearchSvg = styled.svg`
   fill: transparent;
 `;
 export const SearchTextInput = styled.input`
-  /* webkit-box-flex: 100; */
-  -ms-flex-positive: 100;
   flex-grow: 100;
   background-color: transparent;
   border: none;
@@ -431,15 +488,8 @@ export const CenterBlockH2 = styled.h2`
   margin-bottom: 45px;
 `;
 export const CenterBlockFilterDiv = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   margin-bottom: 51px;
 `;
@@ -493,7 +543,7 @@ export const MenuListUl = styled.ul`
   padding: 18px 0 10px 0;
 `;
 export const HeaderMenuItemLi = styled.li`
- padding: 5px 0;
+  padding: 5px 0;
   margin-bottom: 16px;
   cursor: pointer;
   &:hover {
@@ -502,8 +552,8 @@ export const HeaderMenuItemLi = styled.li`
   }
 `;
 
-export const AuthorDiv  =styled.div`
-position: absolute;
+export const AuthorDiv = styled.div`
+  position: absolute;
   margin-left: 70px;
   margin-top: 350px;
   background-color: rgb(49, 46, 46);
@@ -518,14 +568,14 @@ position: absolute;
   transition-duration: 0.1s; */
   overflow: auto;
   display: none;
-  &.active{
+  &.active {
     /* transform: rotateX(0deg);
   transition-duration: 0.2s; */
-  display: block;
+    display: block;
   }
-`
+`;
 export const YearDiv = styled.div`
-position: absolute;
+  position: absolute;
   margin-left: 220px;
   margin-top: 350px;
   background-color: rgb(49, 46, 46);
@@ -540,14 +590,14 @@ position: absolute;
   transition-duration: 0.1s; */
   overflow: auto;
   display: none;
-  &.active{
+  &.active {
     /* transform: rotateX(0deg);
   transition-duration: 0.2s; */
-  display: block;
+    display: block;
   }
-`
+`;
 export const GenreDiv = styled.div`
- position: absolute;
+  position: absolute;
   margin-left: 340px;
   margin-top: 350px;
   background-color: rgb(49, 46, 46);
@@ -562,15 +612,16 @@ export const GenreDiv = styled.div`
   transition-duration: 0.1s; */
   overflow: auto;
   display: none;
-  &.active{
+  &.active {
     /* transform: rotateX(0deg);
   transition-duration: 0.2s; */
-  display: block;
+    display: block;
   }
-`
+`;
 //Menu.js
 export const MainNavNav = styled.nav`
   width: 244px;
+  height: 1100px;
   background-color: #181818;
   padding: 20px 0 20px 36px;
 `;
@@ -614,6 +665,10 @@ export const MenuItemLi = styled.li`
     border-bottom: 1px solid #ad61ff;
   }
 `;
+export const ThemeDiv = styled.div`
+margin-top: 170px;
+cursor: pointer;
+`
 export const MenuLinkA = styled.a`
   color: #ffffff;
   font-weight: 400;
@@ -630,38 +685,29 @@ export const MenuItemsLi = styled.li`
   }
 `;
 export const NavMenuDiv = styled.div`
-display: block;
+  display: block;
   visibility: visible;
   position: absolute;
   /* left: -100%;   
   transition: left 1s; */
   transform: rotateY(90deg);
   transition-duration: 0.1s;
-  &.active{
-     /* left:5%; */
-  transform: rotateY(0deg);
-  transition-duration: 0.2s;
+  &.active {
+    /* left:5%; */
+    transform: rotateY(0deg);
+    transition-duration: 0.2s;
   }
-
-`
+`;
 
 //Sidebar.js
 export const SideBarPersonalDiv = styled.div`
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 12px 0 15px 0;
   margin-right: 90px;
+  margin-top: 30px;
 `;
 export const SideBarPersonalNameP = styled.p`
   font-style: normal;
@@ -684,7 +730,6 @@ export const SideBarBlockDiv = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   margin-right: 90px;
-  margin-top: 100px;
 `;
 export const SideBarListDiv = styled.div`
   display: flex;
