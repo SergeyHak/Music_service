@@ -9,7 +9,7 @@ export default function FilterItemYears() {
     const onYearFilter = (e) => {
         dispatch(filterByYear(e.target.value))
     }
-    const { theme } = useThemeContext();
+    const { isDark } = useThemeContext();
 
 
     return (
@@ -22,7 +22,7 @@ export default function FilterItemYears() {
                     value="newest"
                     onClick={onYearFilter}
                 />
-                <S.FilterYearLabel style={{color: theme.color }} htmlFor="year-filter-new">
+                <S.FilterYearLabel isDark={isDark} htmlFor="year-filter-new">
                     Более новые
                 </S.FilterYearLabel>
                 <input
@@ -32,7 +32,7 @@ export default function FilterItemYears() {
                     value="oldest"
                     onClick={onYearFilter}
                 />
-                <S.FilterYearLabel style={{color: theme.color }} htmlFor="year-filter-old">
+                <S.FilterYearLabel isDark={isDark} htmlFor="year-filter-old">
                     Более старые
                 </S.FilterYearLabel>
                 <input
@@ -42,7 +42,7 @@ export default function FilterItemYears() {
                     value="default"
                     onClick={onYearFilter}
                 />
-                <S.FilterYearLabel style={{color: theme.color }} htmlFor="year-filter-default">
+                <S.FilterYearLabel isDark={isDark} htmlFor="year-filter-default">
                     Любые
                 </S.FilterYearLabel>
             </S.FilterItemsYearLabel>

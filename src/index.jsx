@@ -8,7 +8,7 @@ import * as S from './styles'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-    <React.StrictMode>
+    <React.StrictMode>  
         <Provider store={store}>
             <BrowserRouter>
                 <S.GlobalStyle />

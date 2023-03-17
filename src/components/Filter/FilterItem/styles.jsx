@@ -25,7 +25,7 @@ export const FilterLabel = styled.label`
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    color: #ffffff;
+    color: ${props => props.isDark ? "#ffffff":"#0a0a0a"};
 
    &:hover {
         color: #b672ff;

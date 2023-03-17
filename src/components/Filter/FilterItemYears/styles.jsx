@@ -17,7 +17,7 @@ export const FilterYearLabel = styled.label`
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
-    color: #ffffff;
+    color: ${props =>props.isDark ? "#ffffff ":"#080808 "};
     &:hover{
         text-decoration: underline;
         cursor: pointer;
