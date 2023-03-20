@@ -19,7 +19,7 @@ export default function Signup() {
     const onSignup = (e) => {
         e.preventDefault()
 
-        if (userValues.password === validatePassword) {
+        if (userValues.password) {
             signup(userValues)
         } else {
             alert('Пароли не совпадают')
